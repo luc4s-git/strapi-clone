@@ -6,10 +6,12 @@ export default function Navbar() {
 
   return (
     <nav>
-      <h3 className="logo">strapi</h3>
-      <button onClick={openSidebar}>
-        <FaBars />
-      </button>
+      <div className="nav-center">
+        <h3 className="logo">strapi</h3>
+        <button className="toggle-btn" onClick={openSidebar}>
+          <FaBars />
+        </button>
+      </div>
     </nav>
   );
 }
