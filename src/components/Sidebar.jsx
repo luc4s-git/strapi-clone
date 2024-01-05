@@ -3,34 +3,36 @@ import { useGlobalContext } from '../context/context';
 import subLinks from '../data';
 
 export default function Sidebar() {
-  const { closeSidebar } = useGlobalContext();
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
-  const subLinksMapping = subLinks.map((link) => {
+  const subLinksMapping = subLinks.map((item) => {
+    const { pageId, page, links } = item;
     return (
-      <div key={link.pageId}>
-        <h4>{link.page}</h4>
-        <ul>
-          {link.links.map((link) => {
+      <article key={pageId}>
+        <h4>{page}</h4>
+        <div className="sidebar-sublinks">
+          {links.map((link) => {
+            const { id, url, icon, label } = link;
             return (
-              <li key={link.id}>
-                <a href={link.url}>
-                  {link.icon}
-                  {link.label}
-                </a>
-              </li>
+              <a key={id} href={url}>
+                {icon}
+                {label}
+              </a>
             );
           })}
-        </ul>
-      </div>
+        </div>
+      </article>
     );
   });
 
   return (
-    <div>
-      <button onClick={closeSidebar}>
-        <FaTimes />
-      </button>
-      {subLinksMapping}
-    </div>
+    <aside className="sidebar">
+      <div className="sidebar-container">
+        <button className="close-btn" onClick={closeSidebar}>
+          <FaTimes />
+        </button>
+        <div className="sidebar-links">{subLinksMapping}</div>
+      </div>
+    </aside>
   );
 }
