@@ -8,7 +8,12 @@ export default function Navbar() {
     <nav>
       <div className="nav-center">
         <h3 className="logo">strapi</h3>
-        <button className="toggle-btn" onClick={openSidebar}>
+        <button
+          type="button"
+          className="toggle-btn"
+          onClick={openSidebar}
+          aria-label="sidebar button"
+        >
           <FaBars />
         </button>
       </div>

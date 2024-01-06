@@ -12,7 +12,7 @@ const App = () => {
     <main>
       <Navbar />
       <Hero />
-      {isSidebarOpen && <Sidebar />}
+      <Sidebar />
       <Submenu />
     </main>
   );

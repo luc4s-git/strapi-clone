@@ -26,7 +26,7 @@ export default function Sidebar() {
   });
 
   return (
-    <aside className="sidebar">
+    <aside className={isSidebarOpen ? 'show-sidebar sidebar' : 'sidebar'}>
       <div className="sidebar-container">
         <button className="close-btn" onClick={closeSidebar}>
           <FaTimes />
