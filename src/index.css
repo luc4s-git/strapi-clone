@@ -452,3 +452,56 @@ a:hover {
     cursor: pointer;
   }
 }
+
+.submenu {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .submenu {
+    display: block;
+    position: fixed;
+    width: var(--fluid-width);
+    top: 6rem;
+    left: 50%;
+    max-width: var(--max-width);
+    background-color: var(--white);
+    padding: 2rem;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top;
+    perspective: 1000px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    border-radius: var(--borderRadius);
+  }
+
+  .show-submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(0deg) translateX(-50%);
+  }
+
+  .submenu h5 {
+    margin-bottom: 1rem;
+    color: var(--primary-700);
+  }
+
+  .submenu-links {
+    display: grid;
+    row-gap: 0.5rem;
+  }
+
+  .submenu-links a {
+    display: block;
+    color: var(--grey-900);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .submenu svg {
+    color: var(--grey-500);
+  }
+}
