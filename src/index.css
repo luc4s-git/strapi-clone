@@ -270,6 +270,7 @@ nav {
 }
 
 .nav-center {
+  align-self: stretch;
   width: 90vw;
   max-width: var(--max-width);
   display: flex;
@@ -434,11 +435,13 @@ a:hover {
   .nav-links {
     display: flex;
     justify-content: center;
+    align-self: stretch;
   }
 
   .nav-center {
     display: grid;
     grid-template-columns: auto 1fr;
+    align-self: stretch;
   }
 
   .nav-link {
