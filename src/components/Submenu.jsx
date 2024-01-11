@@ -19,6 +19,7 @@ export default function Submenu() {
       setPageId(null);
     }
   };
+
   return (
     <div
       className={currentPage ? 'submenu show-submenu' : 'submenu'}
